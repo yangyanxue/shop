@@ -67,7 +67,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
          <tr>
          <td><img src="/Shop/images/6.jpg" ><br> 原价:<font><s>￥58</s> </font>现价<font>￥38 </font><br>初春好看的衣服</td>
          <td><img src="/Shop/images/6.jpg" ><br> 原价:<font><s>￥58</s> </font>现价<font>￥38 </font><br>初春好看的衣服</td>
-         <td><img src="/Shop/images/6.jpg" ><br> 原价:<font><s>￥58</s> </font>现价<font>￥38 </font><br>初春好看的衣服</td>
+         <td><img src="/Shop/images/6.jpg" ><br> 原价:<font><s>￥58</s> </font>现价:<font>￥38 </font><br>初春好看的衣服</td>
        </tr>
       
       
