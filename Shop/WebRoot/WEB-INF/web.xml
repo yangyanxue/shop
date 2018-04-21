@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" version="3.0">
+  <servlet>
+    <display-name>region</display-name>
+    <servlet-name>region</servlet-name>
+    <servlet-class>controller.UserControl</servlet-class>
+  </servlet>
+  <servlet>
+    <display-name>CheckUsername</display-name>
+    <servlet-name>CheckUsername</servlet-name>
+    <servlet-class>controller.CheckUsername</servlet-class>
+  </servlet>
+  <servlet>
+    <display-name>Login</display-name>
+    <servlet-name>Login</servlet-name>
+    <servlet-class>controller.Login</servlet-class>
+  </servlet>
+  <servlet>
+    <display-name>ImageServlet</display-name>
+    <servlet-name>ImageServlet</servlet-name>
+    <servlet-class>controller.ImageServlet</servlet-class>
+  </servlet>
+  <servlet>
+    
+    <display-name>CheckImgCode</display-name>
+    <servlet-name>CheckImgCode</servlet-name>
+    <servlet-class>controller.CheckImgCode</servlet-class>
+  </servlet>
+  <servlet>
+    <display-name>SearchGoods</display-name>
+    <servlet-name>SearchGoods</servlet-name>
+    <servlet-class>controller.SearchGoods</servlet-class>
+  </servlet>
+  <filter>
+    <filter-name>pathFilter</filter-name>
+    <filter-class>filter.shopFilter</filter-class>
+  </filter>
+
+
+
+<servlet-mapping>
+    <servlet-name>region</servlet-name>
+    <url-pattern>/controller/UserControl</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>CheckUsername</servlet-name>
+    <url-pattern>/controller/CheckUsername</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>Login</servlet-name>
+    <url-pattern>/controller/Login</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ImageServlet</servlet-name>
+    <url-pattern>/controller/ImageServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>CheckImgCode</servlet-name>
+    <url-pattern>/controller/CheckImgCode</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>SearchGoods</servlet-name>
+    <url-pattern>/controller/SearchGoods</url-pattern>
+  </servlet-mapping>
+  <filter-mapping>
+    <filter-name>pathFilter</filter-name>
+    <url-pattern>/controller/SearchGoods</url-pattern>
+  </filter-mapping>
+
+</web-app>

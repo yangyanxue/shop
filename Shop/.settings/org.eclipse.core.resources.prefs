@@ -1,0 +1,12 @@
+#Fri Apr 06 15:48:26 CST 2018
+eclipse.preferences.version=1
+encoding//WebRoot/index.jsp=UTF-8
+encoding//WebRoot/user=UTF-8
+encoding//WebRoot/user/login.jsp=UTF-8
+encoding//WebRoot/user/region.jsp=UTF-8
+encoding//src/controller=UTF-8
+encoding//src/controller/SearchGoods.java=UTF-8
+encoding//src/controller/UserControl.java=UTF-8
+encoding//src/dao/UserDaoImp.java=UTF-8
+encoding//src/filter/shopFilter.java=UTF-8
+encoding/<project>=UTF-8

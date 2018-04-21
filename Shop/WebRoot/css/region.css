@@ -1,0 +1,16 @@
+@CHARSET "UTF-8";
+.form-control {
+  height:40px;
+  width:300px;
+}
+
+.logo{
+  size:100px;
+  display:inline-block;
+  height:90px;
+  }
+
+ div#pass_surepass{
+   font-size:10px;
+   color:red;
+}
