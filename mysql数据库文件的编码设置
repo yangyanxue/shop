@@ -1,0 +1,4 @@
+MySQL中创建数据库，可以设置编码：create database shop default  utf8;
+创建数据库之后，要看下其他地方设置的编码是否都是UTF8，命令：
+SHOW VARIABLES LIKE 'character_set_%';(SET character_set_results = utf8 ;)
+SHOW VARIABLES LIKE 'collation_%'; 
