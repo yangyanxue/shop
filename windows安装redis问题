@@ -1,7 +1,0 @@
-今天在Windows上搞了一个redis，不用安装，解压之后，会看到有redis-server 和redis-cli.exe，启动服务主要就是用这两个EXE就行
-命令服务器命令：redis-server.exe redis.windows.conf
-然后再重新开个黑窗口，启动客户端：redis-cli.exe -p 6379(端口号)，然后你就可以正常启动
-鉴于以上的命令都得先进到安装目录下，比较麻烦，于是把安装目录配置到环境变量中去，但是配置完之后，再次启动服务端时会报错：
-Invalid argument during startup: Failed to open the .conf file: redis.windows.conf CWD=C:\WINDOWS\system32
-网上查了半天也没查到原因，后来又试了一下从安装目录启动，果然。。。能启动成功。。。。尴尬了。。如果有谁知道原因可以告诉我
-
