@@ -31,6 +31,7 @@
     <servlet-name>SearchGoods</servlet-name>
     <servlet-class>controller.SearchGoods</servlet-class>
   </servlet>
+   
   <filter>
     <filter-name>pathFilter</filter-name>
     <filter-class>filter.shopFilter</filter-class>
@@ -62,9 +63,10 @@
     <servlet-name>SearchGoods</servlet-name>
     <url-pattern>/controller/SearchGoods</url-pattern>
   </servlet-mapping>
+  
   <filter-mapping>
     <filter-name>pathFilter</filter-name>
     <url-pattern>/controller/SearchGoods</url-pattern>
   </filter-mapping>
-
+ 
 </web-app>

@@ -3,6 +3,8 @@
 <%@ page import="model.Goods" %>
 <%@ page import="java.util.*" %>
 <%@ page import="controller.SearchGoods" %>
+<%@page import="service.RedisToCart"%>
+<%@page import="model.CartItem"%>
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
@@ -48,19 +50,29 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		</tr>
 	</thead>
      <tbody>
-      <% ArrayList<Goods> list = (ArrayList<Goods>)session.getAttribute("car"); 
+      <%
+      Cookie[] cookies = request.getCookies();
+      String name = "";
+      for(int i = 0;i<cookies.length;i++){
+        if(cookies[i].getName().equals("username")){
+             name = java.net.URLDecoder.decode(cookies[i].getValue(),"UTF-8");
+        }
+      }
+      //RedisToCart redisToCart  = new RedisToCart();
+      ArrayList<CartItem> list= RedisToCart.getCart(name);
+      //ArrayList<Goods> list = (ArrayList<Goods>)session.getAttribute("car"); 
       if(list == null || list.size()==0) { %>
         <tr>
             <td colspan="6">暂无数据</td>
         </tr>
       <%}else{
          for(int i = 0;i<list.size();i++){
-             Goods good = list.get(i);%>
+             CartItem good = list.get(i);%>
              <tr>
 				<td><%=good.getName() %></td>
 				<td><img src=<%=good.getImages() %> ></td>
 				<td>￥<%=good.getNow_price() %></td>
-				<td>1</td>
+				<td><%=good.getCount() %></td>
 				<td><%=good.getColor() %></td>
 				<td><%=good.getSize() %></td>
 		    </tr>

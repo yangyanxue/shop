@@ -57,7 +57,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
      </tr>
      
      <% 
-       ArrayList<Goods> al  =  (ArrayList<Goods>)request.getAttribute("goods");
+       ArrayList<Goods> al  = (ArrayList<Goods>)request.getAttribute("goods");
        int loop=0;
        
        if(al.size()>0){

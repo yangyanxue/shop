@@ -91,11 +91,14 @@ public class Login extends HttpServlet {
 			//username_exit = userServiceImp.checkName(username);
 			login = userServiceImp.login(user);
 			 if(login) {
+				 
 				 //Cookie cookie = new Cookie("username", username);
 				 Cookie cookie = new Cookie("username", URLEncoder.encode(username,"UTF-8"));
 				 cookie.setMaxAge(24*60*60);
+				 String url = request.getRemoteAddr();
+				 //System.out.println(url);
 				 cookie.setDomain("localhost");
-				 cookie.setPath("/");
+				 cookie.setPath("/Shop");
 				 response.addCookie(cookie);
 				 response.sendRedirect("../index.jsp");
 		    	  }else{
@@ -117,11 +120,13 @@ public class Login extends HttpServlet {
 		//cookie中的用户名删除
 		Cookie [] cookies = request.getCookies();
 		for(int i = 0;i<cookies.length;i++){
-			if(cookies[i].getName().equals("username"));
-			    cookies[i].setValue(null);
+			if(cookies[i].getName().equals("username")){
+				cookies[i].setValue(null);
 			    cookies[i].setPath("/");
 			    cookies[i].setMaxAge(0);
 			    response.addCookie(cookies[i]);  
+			}
+			    
 			    
 		}
 		

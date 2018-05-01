@@ -5,21 +5,33 @@ import java.io.PrintWriter;
 import java.util.ArrayList;
 
 import javax.servlet.ServletException;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import redis.clients.jedis.Jedis;
 import service.GoodsServiceImp;
+import service.RedisToCart;
+import util.JEDIS;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.sun.org.apache.bcel.internal.generic.NEW;
+import com.sun.xml.internal.bind.v2.runtime.Name;
 
+import model.CartItem;
 import model.Goods;
 
 import dao.GoodsDaoImp;
 
 public class SearchGoods extends HttpServlet {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	ArrayList al = new ArrayList();
+	Jedis j = new Jedis("localhost",6379);
 
 	/**
 	 * Constructor of the object.
@@ -91,16 +103,29 @@ public class SearchGoods extends HttpServlet {
 	}
 	public void addCar(HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException{
 		String goodid = request.getParameter("goodid");
-        GoodsServiceImp  g = new GoodsServiceImp();
-		Goods good = g.serchGoodsByID(Integer.parseInt(goodid));
-		HttpSession session =  request.getSession();
-		ArrayList<Goods> list = (ArrayList<Goods>)session.getAttribute("car");
-		if(list == null){
-			list = new ArrayList<Goods>();
-		}
-		list.add(good);
-		session.setAttribute("car", list);
+       // GoodsServiceImp  g = new GoodsServiceImp();
+		//Goods good = g.serchGoodsByID(Integer.parseInt(goodid));
+		
+//		HttpSession session =  request.getSession();
+//		ArrayList<Goods> list = (ArrayList<Goods>)session.getAttribute("car");
+//		if(list == null){
+//			list = new ArrayList<Goods>();
+//		}
+//		list.add(good);
+//		session.setAttribute("car", list);
 		request.setAttribute("goods", al);
+		
+		String username = null; 
+		//从cookie中获取用户名作为redis hash存储的key,商品ID作为field，cart对象作为value值，需要json化；
+		Cookie [] cookies = request.getCookies();
+		for(int i = 0;i<cookies.length;i++){
+			if(cookies[i].getName().equals("username")){
+				username = cookies[i].getValue();
+			}
+		}
+		//RedisToCart r =  new RedisToCart();
+		int id = Integer.parseInt(goodid);
+		RedisToCart.addToCart(username,id);
 		request.getRequestDispatcher("../goods/display_goods.jsp").forward(request, response);
 		
 		

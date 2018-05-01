@@ -3,6 +3,11 @@
 	<classpathentry kind="src" path="src"/>
 	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/Sun JDK 1.6.0_13"/>
 	<classpathentry exported="true" kind="con" path="melibrary.com.genuitec.eclipse.j2eedt.core.MYECLIPSE_JAVAEE_5_CONTAINER"/>
+	<classpathentry kind="lib" path="WebRoot/lib/jedis-2.9.0.jar"/>
+	<classpathentry kind="lib" path="WebRoot/lib/jackson-annotations-2.2.1.jar"/>
+	<classpathentry kind="lib" path="WebRoot/lib/jackson-core-2.2.1.jar"/>
+	<classpathentry kind="lib" path="WebRoot/lib/jackson-databind-2.2.1.jar"/>
+	<classpathentry kind="lib" path="WebRoot/lib/com.fasterxml.jackson.databind.jar"/>
 	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/mysql-connector-java-5.1.22-bin.jar"/>
 	<classpathentry kind="output" path="WebRoot/WEB-INF/classes"/>
 </classpath>
