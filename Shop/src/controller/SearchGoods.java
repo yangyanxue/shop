@@ -103,6 +103,7 @@ public class SearchGoods extends HttpServlet {
 	}
 	public void addCar(HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException{
 		String goodid = request.getParameter("goodid");
+		//购物车由session保存改为用redis保存，持久化工作做完
        // GoodsServiceImp  g = new GoodsServiceImp();
 		//Goods good = g.serchGoodsByID(Integer.parseInt(goodid));
 		
